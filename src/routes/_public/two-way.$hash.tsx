@@ -1,0 +1,15 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { TwoWayVerificationForm } from "#/features/auth/two-way";
+import { AuthLayout } from "#/shared/layouts";
+
+export const Route = createFileRoute("/_public/two-way/$hash")({
+	component: RouteComponent,
+});
+
+function RouteComponent() {
+	return (
+		<AuthLayout>
+			<TwoWayVerificationForm />
+		</AuthLayout>
+	);
+}
