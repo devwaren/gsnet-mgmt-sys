@@ -11,6 +11,4 @@ dist-ssr
 .vinxi
 __unconfig*
 todos.json
-*.txt
-*.yaml
-*.vscode
+package-lock.json

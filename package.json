@@ -1,5 +1,5 @@
 {
-  "name": "gsnet-management-system",
+  "name": "sample",
   "private": true,
   "type": "module",
   "imports": {
@@ -18,10 +18,8 @@
   "dependencies": {
     "@better-auth/passkey": "^1.6.23",
     "@dev-waren/react-form-kit": "^1.0.9",
-    "@hookform/resolvers": "^5.4.0",
     "@tailwindcss/vite": "^4.1.18",
     "@tanstack/react-devtools": "latest",
-    "@tanstack/react-form": "^1.33.0",
     "@tanstack/react-query": "latest",
     "@tanstack/react-query-devtools": "latest",
     "@tanstack/react-router": "latest",
@@ -30,26 +28,17 @@
     "@tanstack/react-start": "latest",
     "@tanstack/router-plugin": "^1.132.0",
     "axios": "^1.18.1",
-    "better-auth": "^1.5.3",
+    "better-auth": "^1.6.23",
     "class-variance-authority": "^0.7.1",
-    "client-only": "^0.0.1",
     "cloudinary": "^2.10.0",
-    "clsx": "^2.1.1",
-    "install": "^0.13.0",
     "lucide-react": "^0.545.0",
     "mongodb": "^7.5.0",
     "motion": "^12.42.2",
     "nitro": "npm:nitro-nightly@latest",
-    "npm": "^12.0.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-hook-form": "^7.81.0",
     "react-hot-toast": "^2.6.0",
-    "server-only": "^0.0.1",
-    "tailwind-merge": "^3.6.0",
     "tailwindcss": "^4.1.18",
-    "xss": "^1.0.15",
-    "zod": "^4.4.3",
     "zustand": "^5.0.14"
   },
   "devDependencies": {
@@ -65,7 +54,7 @@
     "@vitejs/plugin-react": "^6.0.1",
     "jsdom": "^28.1.0",
     "typescript": "^6.0.2",
-    "vite": "^8.1.4",
+    "vite": "^8.0.0",
     "vitest": "^4.1.5"
   },
   "pnpm": {

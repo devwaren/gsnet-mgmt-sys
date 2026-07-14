@@ -1,8 +1,8 @@
 {
-  "projectName": "gsnet-management-system",
+  "projectName": "sample",
   "mode": "file-router",
   "typescript": true,
-  "packageManager": "bun",
+  "packageManager": "npm",
   "includeExamples": false,
   "tailwind": true,
   "addOnOptions": {},
@@ -15,7 +15,6 @@
   "chosenAddOns": [
     "biome",
     "nitro",
-    "better-auth",
     "tanstack-query"
   ]
 }
