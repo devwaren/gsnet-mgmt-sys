@@ -85,22 +85,27 @@ GSNET Management System centralizes the management of administrators, staff, and
 
 ```text
 GSNET-Management-System/
-├── apps/
 ├── public/
 ├── src/
-│   ├── components/
 │   ├── features/
-│   ├── hooks/
+│   ├── gen/
+│   ├── integrations/
 │   ├── lib/
 │   ├── routes/
-│   ├── schemas/
-│   ├── services/
-│   ├── types/
-│   └── utils/
-├── docs/
-├── scripts/
+│   ├── shared/
+│   ├── router.tsx
+│   └── styles.css
+├── .cta.json
+├── .env
+├── .gitignore
+├── biome.json
+├── notes.txt
+├── package-lock.json
 ├── package.json
-└── README.md
+├── README.md
+├── tsconfig.json
+├── tsr.config.json
+└── vite.config.ts
 ```
 
 ## Installation
