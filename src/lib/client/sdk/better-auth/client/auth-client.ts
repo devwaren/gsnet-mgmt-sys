@@ -16,7 +16,10 @@ export const authClient = createAuthClient({
 			schema: inferOrgAdditionalFields({
 				organization: {
 					additionalFields: {
-						role: {
+						name: {
+							type: "string",
+						},
+						slug: {
 							type: "string",
 						},
 					},

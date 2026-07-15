@@ -7,6 +7,7 @@ type FieldTypes =
 	| "radio"
 	| "password"
 	| "file"
+	| "select"
 	| "text";
 
 export type Fields = {
