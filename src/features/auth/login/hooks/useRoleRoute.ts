@@ -1,4 +1,5 @@
 import { useNavigate } from "@tanstack/react-router";
+
 import type { Role } from "../types";
 
 export const useRoleRoute = () => {

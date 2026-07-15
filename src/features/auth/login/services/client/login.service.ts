@@ -1,4 +1,5 @@
 import type { User } from "better-auth";
+
 import { authClient } from "#/lib/client/sdk/better-auth";
 import type { auth } from "#/lib/server";
 

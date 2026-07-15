@@ -18,3 +18,4 @@ export const clearFields = [
 	"confirmPassword",
 	"preview",
 ] as const;
+

@@ -1,4 +1,5 @@
 import { Lock, Mail } from "lucide-react";
+
 import type { Fields } from "#/shared/types";
 
 const loginFields: Fields[] = [

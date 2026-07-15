@@ -1,4 +1,5 @@
 import { Key, Mail } from "lucide-react";
+
 import type { Fields } from "#/shared/types/index.js";
 
 const registerFields: Fields[] = [
