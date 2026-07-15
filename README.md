@@ -208,7 +208,7 @@ POST /sign-out
 ## Development Standards
 
 - TypeScript Strict Mode
-- ESLint
+- Biome
 - Feature-Based Architecture
 - Reusable Components
 - Modular Hooks
