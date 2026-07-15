@@ -1,12 +1,10 @@
 # GSNET Management System
 
-A modern, secure, and scalable management system built for **GSNET** using a full-stack TypeScript architecture. The application provides authentication, organization management, user management, and administrative tools while following a modular and maintainable codebase.
-
----
+A modern, secure, and scalable management system built for **GSNET** using a full-stack TypeScript architecture. It provides authentication, organization management, user administration, and role-based access control while following a modular, maintainable, and secure architecture.
 
 ## Overview
 
-GSNET Management System is designed to centralize the management of users, clients, staff, and administrators. It focuses on security, performance, and developer experience by leveraging modern technologies and best practices.
+GSNET Management System centralizes the management of administrators, staff, and clients through a unified web application. The project emphasizes security, scalability, developer experience, and clean architecture using modern TypeScript technologies.
 
 ## Features
 
@@ -16,8 +14,7 @@ GSNET Management System is designed to centralize the management of users, clien
 - Email OTP Verification
 - Two-Factor Authentication (2FA)
 - Passkey (WebAuthn) Authentication
-- Session Management
-- Secure Authentication Cookies
+- Secure Session Management
 - Protected Routes
 - Role-Based Access Control (RBAC)
 
@@ -25,7 +22,7 @@ GSNET Management System is designed to centralize the management of users, clien
 
 - User Registration
 - User Profiles
-- User Roles
+- Role Management
 - Account Status Management
 - Email Verification
 - Password Reset
@@ -35,11 +32,11 @@ GSNET Management System is designed to centralize the management of users, clien
 - Organization Management
 - Member Management
 - Organization Roles
-- Organization Permissions
+- Permission Management
 
 ### Dashboard
 
-- Administrative Dashboard
+- Administrator Dashboard
 - Staff Dashboard
 - Client Dashboard
 - Analytics Overview
@@ -48,20 +45,15 @@ GSNET Management System is designed to centralize the management of users, clien
 ### Security
 
 - CSRF Protection
-- Secure HTTP Cookies
+- HTTP-Only Cookies
 - Session Validation
 - Rate Limiting
 - Password Hashing
-- Email Verification
-- Two-Factor Authentication
-- Passkey Authentication
 - Secure API Endpoints
 
----
+## Technology Stack
 
-# Tech Stack
-
-## Frontend
+### Frontend
 
 - React
 - TypeScript
@@ -72,88 +64,69 @@ GSNET Management System is designed to centralize the management of users, clien
 - Zod
 - Tailwind CSS
 
-## Backend
+### Backend
 
-- Bun Runtime
+- Bun
 - Better Auth
-- MongoDB
 - TypeScript
 
-## Database
+### Database
 
 - MongoDB
 
-## Authentication
+## Authentication Auth
 
 - Better Auth
 - Email OTP
 - Passkeys (WebAuthn)
 - Two-Factor Authentication
 
----
-
-# Project Structure
+## Project Structure
 
 ```text
 GSNET-Management-System/
-│
 ├── apps/
-│   ├── web/
-│   └── server/
-│
+├── public/
 ├── src/
 │   ├── components/
 │   ├── features/
 │   ├── hooks/
 │   ├── lib/
 │   ├── routes/
-│   ├── services/
 │   ├── schemas/
-│   ├── utils/
-│   └── types/
-│
-├── public/
+│   ├── services/
+│   ├── types/
+│   └── utils/
 ├── docs/
 ├── scripts/
 ├── package.json
 └── README.md
 ```
 
----
+## Installation
 
-# Installation
-
-## Clone Repository
+Clone the repository:
 
 ```bash
 git clone https://github.com/your-username/gsnet-management-system.git
-```
-
-```bash
 cd gsnet-management-system
 ```
 
----
-
-## Install Dependencies
-
-Using Bun
+Install dependencies:
 
 ```bash
 bun install
 ```
 
-or npm
+or
 
 ```bash
 npm install
 ```
 
----
-
 ## Environment Variables
 
-Create a `.env` file.
+Create a `.env` file:
 
 ```env
 VITE_API_URL=http://localhost:3000
@@ -171,91 +144,56 @@ SMTP_PASSWORD=
 SMTP_FROM=
 ```
 
----
+## Running the Application
 
-# Development
-
-Run development server
+Development:
 
 ```bash
 bun run dev
 ```
 
-or
-
-```bash
-npm run dev
-```
-
----
-
-# Build
+Build:
 
 ```bash
 bun run build
 ```
 
----
-
-# Production
+Production:
 
 ```bash
 bun run start
 ```
 
----
+## Authentication Flow
 
-# Authentication Flow
+1. Register an account.
+2. Verify the email using the OTP.
+3. Sign in with email and password.
+4. Complete Two-Factor Authentication (if enabled).
+5. A secure session is created.
+6. The user is redirected according to their assigned role.
 
-1. User registers.
-2. Email verification OTP is sent.
-3. User verifies email.
-4. User signs in.
-5. Optional Two-Factor Authentication is requested.
-6. Session is created.
-7. User is redirected based on their role.
+## User Roles
 
----
+| Role   | Description                |
+| ------ | -------------------------- |
+| Admin  | Full system administration |
+| Staff  | Operational management     |
+| Client | Client portal access       |
 
-# User Roles
+## API Endpoints
 
-| Role | Description |
-|------|-------------|
-| Admin | Full system access |
-| Staff | Operational management |
-| Client | Client portal access |
+Authentication endpoints are available under:
 
----
-
-# Security Features
-
-- Better Auth
-- Secure Session Management
-- HTTP Only Cookies
-- Email Verification
-- Two-Factor Authentication
-- Passkeys (WebAuthn)
-- CSRF Protection
-- Input Validation using Zod
-- Role-Based Authorization
-- Password Hashing
-- Secure API Design
-
----
-
-# API
-
-Authentication endpoints are served under:
-
-```
+```text
 /api/v1/auth
 ```
 
 Example endpoints:
 
-```
-POST /sign-in/email
+```text
 POST /sign-up/email
+POST /sign-in/email
 POST /email-otp/send-verification-otp
 POST /two-factor/enable
 POST /two-factor/disable
@@ -265,79 +203,68 @@ GET  /get-session
 POST /sign-out
 ```
 
----
-
-# Coding Standards
+## Development Standards
 
 - TypeScript Strict Mode
 - ESLint
-- Consistent Folder Structure
 - Feature-Based Architecture
 - Reusable Components
 - Modular Hooks
 - Type-Safe APIs
+- Consistent Folder Structure
 
----
-
-# Scripts
+## Available Scripts
 
 ```bash
 bun run dev
 ```
 
-Start development server.
+Starts the development server.
 
 ```bash
 bun run build
 ```
 
-Build the application.
+Builds the project.
 
 ```bash
 bun run start
 ```
 
-Start production server.
+Runs the production server.
 
 ```bash
 bun run lint
 ```
 
-Run linter.
+Runs ESLint.
 
 ```bash
 bun run typecheck
 ```
 
-Run TypeScript checks.
+Runs the TypeScript compiler.
 
----
-
-# Future Improvements
+## Roadmap
 
 - Audit Logs
 - Activity History
 - Notifications
 - File Uploads
 - Reporting Module
-- System Settings
+- Dashboard Charts
 - Backup Management
 - Multi-language Support
 - Dark Mode
-- Dashboard Charts
 
----
-
-# License
+## License
 
 This project is proprietary software developed for **GSNET**.
 
-Unauthorized copying, distribution, modification, or commercial use without permission is prohibited.
+Unauthorized copying, modification, distribution, or commercial use without permission is prohibited.
 
----
+## Author
 
-# Author
+## GSNET Development Team**
 
-**GSNET Development Team**
-
-Built with ❤️ using TypeScript, React, Bun, Better Auth, and MongoDB.
+Built with React, TypeScript, Bun, Better Auth, and MongoDB.
