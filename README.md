@@ -93,8 +93,8 @@ GSNET-Management-System/
 │   ├── lib/
 │   ├── routes/
 │   ├── shared/
-│   ├── router.tsx
-│   └── styles.css
+│   └── router.tsx
+│  
 ├── .cta.json
 ├── .env
 ├── .gitignore
