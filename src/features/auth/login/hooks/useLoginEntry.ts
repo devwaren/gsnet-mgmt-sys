@@ -25,6 +25,12 @@ const useLoginEntry = () => {
 				await navigate({
 					to: "/admin",
 				});
+			} else if (data.user.role === "staff") {
+				await navigate({
+					to: "/users"
+				})
+			} else {
+				await navigate({to: "/clients"})
 			}
 		},
 
