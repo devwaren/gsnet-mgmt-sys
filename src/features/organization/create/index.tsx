@@ -7,7 +7,7 @@ import {
 
 import { Button, ModalContainer } from "#/shared/components";
 import { CreateFields } from "./components";
-import { useCreateOrgForm } from "./hooks/useCreateOrgForm";
+import { useCreateOrgForm } from "./hooks/useCreateOrg.form";
 
 export function CreateOrganization() {
   const form = useCreateOrgForm();

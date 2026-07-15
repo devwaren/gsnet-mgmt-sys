@@ -1,7 +1,7 @@
 import { useFormSettings } from "@dev-waren/react-form-kit";
 
 import { createOrganizationSchema } from "../validation";
-import { useCreateOrgEntry } from "./useCreateOrgEntry";
+import { useCreateOrgEntry } from "./useCreateOrg.entry";
 
 const useCreateOrgForm = () => {
 	const mutation = useCreateOrgEntry();
