@@ -265,6 +265,6 @@ Unauthorized copying, modification, distribution, or commercial use without perm
 
 ## Author
 
-## GSNET Development Team**
+## Dev Waren (Software Engineer)
 
 Built with React, TypeScript, Bun, Better Auth, and MongoDB.
