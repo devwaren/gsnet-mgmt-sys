@@ -5,6 +5,9 @@ import { emailOTP, phoneNumber, twoFactor } from "better-auth/plugins";
 import { tanstackStartCookies } from "better-auth/tanstack-start";
 import { TimeIn } from "#/lib/server/config/timeIn.ts";
 import { clientMongo, hostnameUri } from "#/lib/server/env";
+export type Auth = typeof auth;
+
+export type AuthUser = typeof auth.$Infer.Session.user;
 
 export const auth = betterAuth({
 	secret: process.env.BETTER_AUTH_SECRET,
