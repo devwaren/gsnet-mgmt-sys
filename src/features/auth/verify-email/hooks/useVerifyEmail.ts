@@ -1,6 +1,6 @@
 import { authClient } from "#/lib/client/sdk/better-auth/index.ts";
-import { useAutoResendCode } from "./useAutoResendCode";
-import { useVerifyEmailForm } from "./useVerifyEmailForm";
+import { useAutoResendCode } from "./useAutoResendCode.entry";
+import { useVerifyEmailForm } from "./useVerifyEmail.form";
 
 export const useVerifyEmail = () => {
 	const { data: session } = authClient.useSession();

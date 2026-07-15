@@ -1,4 +1,4 @@
-export { useResendCode } from "./useResendCode";
-export { useResendOTPForm } from "./useResendOTPForm";
+export { useResendCode } from "./useResendCode.entry";
+export { useResendOTPForm } from "./useResendOTP.form";
 export { useVerifyEmail } from "./useVerifyEmail";
-export { useVerifyEmailForm } from "./useVerifyEmailForm";
+export { useVerifyEmailForm } from "./useVerifyEmail.form";
