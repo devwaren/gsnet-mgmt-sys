@@ -10,22 +10,23 @@ import { createAuthClient } from "better-auth/react";
 export const authClient = createAuthClient({
 	baseURL: import.meta.env.VITE_API_URL,
 	basePath: "/api/v1/auth",
-	
+
 	plugins: [
 		organizationClient({
-      schema: inferOrgAdditionalFields({
-        organization: {
-          additionalFields: {
-            role: {
-              type: "string", 
-            }, 
-          },
-        },
-      }),
-    }),
+			schema: inferOrgAdditionalFields({
+				organization: {
+					additionalFields: {
+						role: {
+							type: "string",
+						},
+					},
+				},
+			}),
+		}),
 		emailOTPClient(),
 		passkeyClient(),
-		twoFactorClient(),
+		twoFactorClient({
+			twoFactorPage: "/two-factor/$hash",
+		}),
 	],
 });
-

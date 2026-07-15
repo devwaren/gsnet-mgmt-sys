@@ -32,7 +32,7 @@ import { Route as UsersIdPermissionsRouteImport } from './../routes/users/$id/pe
 import { Route as UsersIdNotificationsRouteImport } from './../routes/users/$id/notifications'
 import { Route as PublicVerifyEmailHashRouteImport } from './../routes/_public/verify-email.$hash'
 import { Route as PublicVerifiedSucessHashRouteImport } from './../routes/_public/verified-sucess.$hash'
-import { Route as PublicTwoWayHashRouteImport } from './../routes/_public/two-way.$hash'
+import { Route as PublicTwoFactorHashRouteImport } from './../routes/_public/two-factor.$hash'
 import { Route as PublicResetPasswordHashRouteImport } from './../routes/_public/reset-password.$hash'
 import { Route as ProtectedClientsSubscriptionRouteImport } from './../routes/_protected/clients/subscription'
 import { Route as ProtectedClientsSettingsRouteImport } from './../routes/_protected/clients/settings'
@@ -191,9 +191,9 @@ const PublicVerifiedSucessHashRoute =
     path: '/verified-sucess/$hash',
     getParentRoute: () => PublicRoute,
   } as any)
-const PublicTwoWayHashRoute = PublicTwoWayHashRouteImport.update({
-  id: '/two-way/$hash',
-  path: '/two-way/$hash',
+const PublicTwoFactorHashRoute = PublicTwoFactorHashRouteImport.update({
+  id: '/two-factor/$hash',
+  path: '/two-factor/$hash',
   getParentRoute: () => PublicRoute,
 } as any)
 const PublicResetPasswordHashRoute = PublicResetPasswordHashRouteImport.update({
@@ -461,7 +461,7 @@ export interface FileRoutesByFullPath {
   '/clients/settings': typeof ProtectedClientsSettingsRoute
   '/clients/subscription': typeof ProtectedClientsSubscriptionRoute
   '/reset-password/$hash': typeof PublicResetPasswordHashRoute
-  '/two-way/$hash': typeof PublicTwoWayHashRoute
+  '/two-factor/$hash': typeof PublicTwoFactorHashRoute
   '/verified-sucess/$hash': typeof PublicVerifiedSucessHashRoute
   '/verify-email/$hash': typeof PublicVerifyEmailHashRoute
   '/users/$id/notifications': typeof UsersIdNotificationsRoute
@@ -522,7 +522,7 @@ export interface FileRoutesByTo {
   '/clients/settings': typeof ProtectedClientsSettingsRoute
   '/clients/subscription': typeof ProtectedClientsSubscriptionRoute
   '/reset-password/$hash': typeof PublicResetPasswordHashRoute
-  '/two-way/$hash': typeof PublicTwoWayHashRoute
+  '/two-factor/$hash': typeof PublicTwoFactorHashRoute
   '/verified-sucess/$hash': typeof PublicVerifiedSucessHashRoute
   '/verify-email/$hash': typeof PublicVerifyEmailHashRoute
   '/users/$id/notifications': typeof UsersIdNotificationsRoute
@@ -591,7 +591,7 @@ export interface FileRoutesById {
   '/_protected/clients/settings': typeof ProtectedClientsSettingsRoute
   '/_protected/clients/subscription': typeof ProtectedClientsSubscriptionRoute
   '/_public/reset-password/$hash': typeof PublicResetPasswordHashRoute
-  '/_public/two-way/$hash': typeof PublicTwoWayHashRoute
+  '/_public/two-factor/$hash': typeof PublicTwoFactorHashRoute
   '/_public/verified-sucess/$hash': typeof PublicVerifiedSucessHashRoute
   '/_public/verify-email/$hash': typeof PublicVerifyEmailHashRoute
   '/users/$id/notifications': typeof UsersIdNotificationsRoute
@@ -659,7 +659,7 @@ export interface FileRouteTypes {
     | '/clients/settings'
     | '/clients/subscription'
     | '/reset-password/$hash'
-    | '/two-way/$hash'
+    | '/two-factor/$hash'
     | '/verified-sucess/$hash'
     | '/verify-email/$hash'
     | '/users/$id/notifications'
@@ -720,7 +720,7 @@ export interface FileRouteTypes {
     | '/clients/settings'
     | '/clients/subscription'
     | '/reset-password/$hash'
-    | '/two-way/$hash'
+    | '/two-factor/$hash'
     | '/verified-sucess/$hash'
     | '/verify-email/$hash'
     | '/users/$id/notifications'
@@ -788,7 +788,7 @@ export interface FileRouteTypes {
     | '/_protected/clients/settings'
     | '/_protected/clients/subscription'
     | '/_public/reset-password/$hash'
-    | '/_public/two-way/$hash'
+    | '/_public/two-factor/$hash'
     | '/_public/verified-sucess/$hash'
     | '/_public/verify-email/$hash'
     | '/users/$id/notifications'
@@ -1009,11 +1009,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PublicVerifiedSucessHashRouteImport
       parentRoute: typeof PublicRoute
     }
-    '/_public/two-way/$hash': {
-      id: '/_public/two-way/$hash'
-      path: '/two-way/$hash'
-      fullPath: '/two-way/$hash'
-      preLoaderRoute: typeof PublicTwoWayHashRouteImport
+    '/_public/two-factor/$hash': {
+      id: '/_public/two-factor/$hash'
+      path: '/two-factor/$hash'
+      fullPath: '/two-factor/$hash'
+      preLoaderRoute: typeof PublicTwoFactorHashRouteImport
       parentRoute: typeof PublicRoute
     }
     '/_public/reset-password/$hash': {
@@ -1449,7 +1449,7 @@ interface PublicRouteChildren {
   PublicLoginRoute: typeof PublicLoginRoute
   PublicRegisterRoute: typeof PublicRegisterRoute
   PublicResetPasswordHashRoute: typeof PublicResetPasswordHashRoute
-  PublicTwoWayHashRoute: typeof PublicTwoWayHashRoute
+  PublicTwoFactorHashRoute: typeof PublicTwoFactorHashRoute
   PublicVerifiedSucessHashRoute: typeof PublicVerifiedSucessHashRoute
   PublicVerifyEmailHashRoute: typeof PublicVerifyEmailHashRoute
 }
@@ -1459,7 +1459,7 @@ const PublicRouteChildren: PublicRouteChildren = {
   PublicLoginRoute: PublicLoginRoute,
   PublicRegisterRoute: PublicRegisterRoute,
   PublicResetPasswordHashRoute: PublicResetPasswordHashRoute,
-  PublicTwoWayHashRoute: PublicTwoWayHashRoute,
+  PublicTwoFactorHashRoute: PublicTwoFactorHashRoute,
   PublicVerifiedSucessHashRoute: PublicVerifiedSucessHashRoute,
   PublicVerifyEmailHashRoute: PublicVerifyEmailHashRoute,
 }
