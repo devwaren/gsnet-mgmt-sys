@@ -99,7 +99,6 @@ GSNET-Management-System/
 ├── .gitignore
 ├── biome.json
 ├── notes.txt
-├── package-lock.json
 ├── package.json
 ├── README.md
 ├── tsconfig.json
