@@ -1,3 +1,3 @@
 export function VerifyEmailFields() {
-	// Something Here
+  // Something Here
 }

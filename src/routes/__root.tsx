@@ -1,39 +1,16 @@
-import type { QueryClient } from "@tanstack/react-query";
 import {
   createRootRouteWithContext,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
 import { Toaster } from "react-hot-toast";
+
+import { appHead, type MyRouterContext } from "#/lib/config";
 import { TanstackDevToolsIntegration } from "../integrations/tanstack-query";
 import { NotFound } from "../shared/pages";
-import appCss from "../shared/styles/index.css?url";
-
-interface MyRouterContext {
-  queryClient: QueryClient;
-}
 
 export const Route = createRootRouteWithContext<MyRouterContext>()({
-  head: () => ({
-    meta: [
-      {
-        charSet: "utf-8",
-      },
-      {
-        name: "viewport",
-        content: "width=device-width, initial-scale=1",
-      },
-      {
-        title: "GS Internet Management System",
-      },
-    ],
-    links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-    ],
-  }),
+  head: appHead,
   shellComponent: RootDocument,
   notFoundComponent: NotFound,
 });

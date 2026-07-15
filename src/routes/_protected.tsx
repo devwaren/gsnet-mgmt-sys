@@ -1,10 +1,10 @@
 import { createFileRoute, Outlet } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/_protected")({
-	beforeLoad: async () => {},
-	component: RouteComponent,
+  beforeLoad: async () => {},
+  component: RouteComponent,
 });
 
 function RouteComponent() {
-	return <Outlet />;
+  return <Outlet />;
 }

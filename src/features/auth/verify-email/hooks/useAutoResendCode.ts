@@ -1,6 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import { useNavigate } from "@tanstack/react-router";
 import { useEffect } from "react";
+
 import { authClient } from "#/lib/client/sdk/better-auth";
 import { resendVerificationCodeService } from "../services/client";
 
