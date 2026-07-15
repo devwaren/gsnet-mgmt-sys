@@ -88,7 +88,6 @@ GSNET-Management-System/
 ├── public/
 ├── src/
 │   ├── features/
-│   ├── gen/
 │   ├── integrations/
 │   ├── lib/
 │   ├── routes/
