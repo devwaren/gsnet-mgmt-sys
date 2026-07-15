@@ -96,7 +96,6 @@ GSNET-Management-System/
 │   └── router.tsx
 │  
 ├── .cta.json
-├── .env
 ├── .gitignore
 ├── biome.json
 ├── notes.txt
