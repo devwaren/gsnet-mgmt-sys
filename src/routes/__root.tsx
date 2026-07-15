@@ -1,55 +1,55 @@
 import type { QueryClient } from "@tanstack/react-query";
 import {
-	createRootRouteWithContext,
-	HeadContent,
-	Scripts,
+  createRootRouteWithContext,
+  HeadContent,
+  Scripts,
 } from "@tanstack/react-router";
 import { Toaster } from "react-hot-toast";
 import { TanstackDevToolsIntegration } from "../integrations/tanstack-query";
 import { NotFound } from "../shared/pages";
-import appCss from "../styles.css?url";
+import appCss from "../shared/styles/index.css?url";
 
 interface MyRouterContext {
-	queryClient: QueryClient;
+  queryClient: QueryClient;
 }
 
 export const Route = createRootRouteWithContext<MyRouterContext>()({
-	head: () => ({
-		meta: [
-			{
-				charSet: "utf-8",
-			},
-			{
-				name: "viewport",
-				content: "width=device-width, initial-scale=1",
-			},
-			{
-				title: "GS Internet Management System",
-			},
-		],
-		links: [
-			{
-				rel: "stylesheet",
-				href: appCss,
-			},
-		],
-	}),
-	shellComponent: RootDocument,
-	notFoundComponent: NotFound,
+  head: () => ({
+    meta: [
+      {
+        charSet: "utf-8",
+      },
+      {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1",
+      },
+      {
+        title: "GS Internet Management System",
+      },
+    ],
+    links: [
+      {
+        rel: "stylesheet",
+        href: appCss,
+      },
+    ],
+  }),
+  shellComponent: RootDocument,
+  notFoundComponent: NotFound,
 });
 
 function RootDocument({ children }: { children: React.ReactNode }) {
-	return (
-		<html lang="en">
-			<head>
-				<HeadContent />
-			</head>
-			<body className="bg-slate-200">
-				<div className="max-w-440 mx-auto">{children}</div>
-				<Toaster position="bottom-left" />
-				<TanstackDevToolsIntegration />
-				<Scripts />
-			</body>
-		</html>
-	);
+  return (
+    <html lang="en">
+      <head>
+        <HeadContent />
+      </head>
+      <body className="bg-slate-200">
+        <div className="max-w-440 mx-auto">{children}</div>
+        <Toaster position="bottom-left" />
+        <TanstackDevToolsIntegration />
+        <Scripts />
+      </body>
+    </html>
+  );
 }
