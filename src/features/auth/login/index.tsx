@@ -12,6 +12,8 @@ import { useLoginForm } from "./hooks";
 export function LoginForm() {
   const form = useLoginForm();
 
+  const isPending = form.methods.formState.isLoading;
+
   return (
     <FormContainer>
       <Form {...form} className="w-full space-y-9 text-center lg:w-2/3">
@@ -23,7 +25,7 @@ export function LoginForm() {
 
         <FormSection aria-label="Login-title">
           <LoginFields />
-          <LoginMenu />
+          <LoginMenu isPending={isPending} />
         </FormSection>
       </Form>
     </FormContainer>

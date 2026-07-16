@@ -3,7 +3,11 @@ import { motion } from "motion/react";
 
 import { Button } from "#/shared/components";
 
-export function LoginMenu() {
+type Props = {
+  isPending: boolean;
+};
+
+export function LoginMenu(props: Props) {
   return (
     <>
       <motion.div
@@ -20,7 +24,7 @@ export function LoginMenu() {
             variant="secondary"
             size="sm"
             className="w-full">
-            Login
+            {props.isPending ? "Login" : "Logining..."}
           </Button>
         </motion.div>
 
