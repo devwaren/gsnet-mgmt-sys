@@ -1,7 +1,7 @@
 import { useFormSettings } from "@dev-waren/react-form-kit";
 
 import { loginSchema } from "../validation";
-import { useLoginEntry } from "./useLoginEntry";
+import { useLoginEntry } from "./useLogin.entry";
 
 const useLoginForm = () => {
 	const mutation = useLoginEntry();
