@@ -5,21 +5,29 @@ import { auth } from "../sdk/better-auth";
 
 const publicMiddleware = createMiddleware().server(
 	async ({ next, request }) => {
-		const session = await auth.api.getSession({ headers: request.headers });
-		if (session) {
-			switch (true) {
-				case !session.user.emailVerified:
-					throw redirect({
-						to: "/verify-email/$hash",
-						params: { hash: session.session.token },
-					});
-				case session.user.role === "admin":
-					throw redirect({ to: "/admin" });
-				default:
-					throw redirect({ to: "/clients" });
-			}
+		const session = await auth.api.getSession({
+			headers: request.headers,
+		});
+
+		if (!session) {
+			return next();
 		}
-		return await next();
+
+		const pathname = new URL(request.url).pathname;
+
+		let destination = "/clients";
+
+		if (!session.user.emailVerified) {
+			destination = `/verify-email/${session.session.token}`;
+		} else if (session.user.role === "admin") {
+			destination = "/admin";
+		}
+
+		if (pathname !== destination) {
+			throw redirect({ to: destination });
+		}
+
+		return next();
 	},
 );
 
