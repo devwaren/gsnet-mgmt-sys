@@ -5,8 +5,9 @@ import { useLoginEntry } from "./useLoginEntry";
 
 const useLoginForm = () => {
 	const mutation = useLoginEntry();
+	const isLoading = mutation.isPending;
 
-	return useFormSettings({
+	const form = useFormSettings({
 		schema: loginSchema,
 		defaultValues: {
 			email: "",
@@ -15,6 +16,8 @@ const useLoginForm = () => {
 		clearFields: ["email", "password"],
 		onSubmit: (data) => mutation.mutateAsync(data),
 	});
+
+	return { form, isLoading };
 };
 
 export { useLoginForm };

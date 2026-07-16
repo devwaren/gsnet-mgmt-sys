@@ -10,9 +10,7 @@ import { LoginFields, LoginMenu } from "./components";
 import { useLoginForm } from "./hooks";
 
 export function LoginForm() {
-  const form = useLoginForm();
-
-  const isPending = form.methods.formState.isLoading;
+  const { form, isLoading } = useLoginForm();
 
   return (
     <FormContainer>
@@ -25,7 +23,7 @@ export function LoginForm() {
 
         <FormSection aria-label="Login-title">
           <LoginFields />
-          <LoginMenu isPending={isPending} />
+          <LoginMenu isPending={isLoading} />
         </FormSection>
       </Form>
     </FormContainer>
