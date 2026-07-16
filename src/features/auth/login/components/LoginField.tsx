@@ -1,6 +1,7 @@
+import { Mapper } from "@dev-waren/react-form-kit";
 import { motion } from "motion/react";
 
-import { Input, Mapper } from "#/shared/components";
+import { Input } from "#/shared/components";
 import { loginFields } from "../constants";
 
 const loginFieldProps = {

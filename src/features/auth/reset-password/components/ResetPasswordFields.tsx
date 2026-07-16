@@ -1,4 +1,6 @@
-import { Input, Mapper } from "#/shared/components";
+import { Mapper } from "@dev-waren/react-form-kit";
+
+import { Input } from "#/shared/components";
 import { resetPasswordFields } from "../constants";
 
 export function ResetPasswordFields() {

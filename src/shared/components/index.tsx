@@ -2,7 +2,6 @@ export { AuthTitle } from "./AuthTitle";
 export { Button } from "./Button";
 export { AuthIcon } from "./Icon";
 export { Input } from "./Input";
-export { Mapper } from "./Mapper";
 export {
   ModalContainer,
   ModalDescription,

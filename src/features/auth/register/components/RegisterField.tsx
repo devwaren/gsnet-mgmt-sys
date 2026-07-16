@@ -1,6 +1,7 @@
+import { Mapper } from "@dev-waren/react-form-kit";
 import { motion } from "motion/react";
 
-import { Input, Mapper, UploadImage } from "#/shared/components";
+import { Input, UploadImage } from "#/shared/components";
 import { registerFields } from "../constants";
 
 // Shared Mapper configuration for the register form fields.

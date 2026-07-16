@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@better-auth/passkey": "^1.6.23",
-    "@dev-waren/react-form-kit": "^1.0.9",
+    "@dev-waren/react-form-kit": "^1.1.1",
     "@tailwindcss/vite": "^4.1.18",
     "@tanstack/react-devtools": "latest",
     "@tanstack/react-query": "latest",
