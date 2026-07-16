@@ -7,4 +7,5 @@ export type LoginEmail = {
 
 export type LoginResponse = {
 	user: AuthUser;
+	token: string;
 };

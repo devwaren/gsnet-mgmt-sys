@@ -1,12 +1,12 @@
 import { authClient } from "../sdk/better-auth";
 
-const useUserSession = () => {
-	const { data: session } = authClient.useSession();
+export const useUserSession = () => {
+	const { data: session, isPending } = authClient.useSession();
 
-	const token = session?.session.token;
-	const user = session?.user;
-
-	return { token, user };
+	return {
+		isPending,
+		token: session?.session.token,
+		user: session?.user,
+		session: session?.session,
+	};
 };
-
-export { useUserSession };
