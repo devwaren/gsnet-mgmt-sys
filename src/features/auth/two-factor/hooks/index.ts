@@ -1,1 +1,1 @@
-export * from "./useTwoWayVerificationForm";
+export * from "./useTwoWayVerification.form";
