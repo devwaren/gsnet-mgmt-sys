@@ -12,8 +12,9 @@ const authMiddleware = createMiddleware().server(async ({ next, request }) => {
 		throw redirect({ to: "/login" });
 	}
 
+	const pathname = new URL(request.url).pathname;
+
 	if (!session.user.emailVerified) {
-		const pathname = new URL(request.url).pathname;
 		const destination = `/verify-email/${session.session.token}`;
 
 		if (pathname !== destination) {
@@ -24,15 +25,23 @@ const authMiddleware = createMiddleware().server(async ({ next, request }) => {
 				},
 			});
 		}
+
+		return next();
 	}
 
 	if (session.user.twoFactorEnabled) {
-		throw redirect({
-			to: "/two-factor/$hash",
-			params: {
-				hash: session.session.token,
-			},
-		});
+		const destination = `/two-factor/${session.session.token}`;
+
+		if (pathname !== destination) {
+			throw redirect({
+				to: "/two-factor/$hash",
+				params: {
+					hash: session.session.token,
+				},
+			});
+		}
+
+		return next();
 	}
 
 	return next();
