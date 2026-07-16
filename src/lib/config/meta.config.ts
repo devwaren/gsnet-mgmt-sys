@@ -17,5 +17,27 @@ export const appHead = () => ({
 			rel: "stylesheet",
 			href: appCss,
 		},
+		{
+			rel: "icon",
+			type: "image/x-icon",
+			href: "/favicon.ico",
+		},
+		{
+			rel: "icon",
+			type: "image/webp",
+			sizes: "32x32",
+			href: "/logo192.webp",
+		},
+		{
+			rel: "icon",
+			type: "image/webp",
+			sizes: "16x16",
+			href: "/logo192.webp",
+		},
+		{
+			rel: "apple-touch-icon",
+			sizes: "180x180",
+			href: "/logo192.webp",
+		},
 	],
 });

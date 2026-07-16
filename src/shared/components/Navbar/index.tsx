@@ -24,7 +24,7 @@ export function Navbar() {
   };
 
   return (
-    <header className="px-4 py-2 flex items-center justify-between text-gray-700 max-w-440 mx-auto">
+    <header className="p-4 flex items-center justify-between text-gray-700 max-w-440 mx-auto">
       <NavbarLogo />
       <NavbarLinks />
       <div className="flex items-center space-y-4 justify-center mt-5">
