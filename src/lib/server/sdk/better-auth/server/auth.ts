@@ -3,11 +3,14 @@ import { betterAuth } from "better-auth";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
 import { emailOTP, phoneNumber, twoFactor } from "better-auth/plugins";
 import { tanstackStartCookies } from "better-auth/tanstack-start";
+import { Resend } from "resend";
+
 import { TimeIn } from "#/lib/server/config/timeIn.ts";
 import { clientMongo, hostnameUri } from "#/lib/server/env";
 export type Auth = typeof auth;
 
 export type AuthUser = typeof auth.$Infer.Session.user;
+export const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const auth = betterAuth({
 	secret: process.env.BETTER_AUTH_SECRET,
@@ -56,6 +59,7 @@ export const auth = betterAuth({
 			sendVerificationOnSignUp: true,
 			async sendVerificationOTP({ email, otp, type }) {
 				console.log(email, otp, type);
+				// domain is required to send email right away to the email recipients
 			},
 		}),
 		tanstackStartCookies(),

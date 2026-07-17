@@ -1,4 +1,5 @@
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
+
 import { clientMongo } from "#/lib/server/env/index.ts";
 import { emailAndPassword } from "./password.config";
 import { plugins } from "./plugins";

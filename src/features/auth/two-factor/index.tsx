@@ -14,7 +14,7 @@ import { otpInputProps } from "./constants";
 import { useTwoWayVerificationForm } from "./hooks";
 
 export function TwoWayVerificationForm() {
-  const form = useTwoWayVerificationForm();
+  const { form } = useTwoWayVerificationForm();
 
   const { user } = useUserSession();
 

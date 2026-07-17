@@ -1,20 +1,22 @@
 import { useFormSettings } from "@dev-waren/react-form-kit";
 
-import type { HandleTwoWayVerificationSchema } from "../types";
 import { verifyTwoWayEmailSchema } from "../validation";
+import { useTwoWayVerificationEntry } from "./useTwoWayVerification.entry";
 
-const handleTwoWaySubmit: HandleTwoWayVerificationSchema = async (data) => {
-	console.log(`Submitted Two-way verification code :`, data);
-};
+const useTwoWayVerificationForm = () => {
+	const mutation = useTwoWayVerificationEntry();
+	const isPending = mutation.isPending;
 
-const useTwoWayVerificationForm = () =>
-	useFormSettings({
+	const form = useFormSettings({
 		schema: verifyTwoWayEmailSchema,
 		defaultValues: {
 			code: "",
 		},
 		clearFields: ["code"],
-		onSubmit: handleTwoWaySubmit,
+		onSubmit: (data) => mutation.mutateAsync(data),
 	});
+
+	return { form, isPending };
+};
 
 export { useTwoWayVerificationForm };

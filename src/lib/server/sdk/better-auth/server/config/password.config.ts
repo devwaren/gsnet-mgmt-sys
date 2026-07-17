@@ -1,5 +1,6 @@
 import type { User } from "better-auth";
-import { auth } from "../auth";
+
+import { resend } from "../auth";
 
 type EmailPasswordData = {
 	user: User;
@@ -9,12 +10,22 @@ type EmailPasswordData = {
 
 const emailAndPassword = {
 	enabled: true,
-	sendResetPassword: async (data: EmailPasswordData) => {
-		await auth.api.requestPasswordReset({
-			body: {
-				email: data.user.email,
-			},
+	sendResetPassword: async ({ user, url }: EmailPasswordData) => {
+		const { error } = await resend.emails.send({
+			from: "GS Internet <noreply@gsnet-sys.com>",
+			to: user.email,
+			subject: "Reset your password",
+			html: `
+				<p>You requested to reset your password.</p>
+				<p>
+					<a href="${url}">Reset Password</a>
+				</p>
+			`,
 		});
+
+		if (error) {
+			throw new Error(error.message);
+		}
 	},
 } as const;
 
