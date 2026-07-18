@@ -18,3 +18,16 @@ export const userService = {
 		});
 	},
 };
+
+export const validatePppId = async (pppId: string, email: string) => {
+	const ppp = await db.collection("pppIds").findOne({
+		pppId,
+		email,
+	});
+
+	if (!ppp) {
+		throw new Error("PPP ID does not exist.");
+	}
+
+	return ppp;
+};

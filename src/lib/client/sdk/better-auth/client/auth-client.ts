@@ -22,6 +22,9 @@ export const authClient = createAuthClient({
 						slug: {
 							type: "string",
 						},
+						log: {
+							type: "string",
+						},
 					},
 				},
 			}),

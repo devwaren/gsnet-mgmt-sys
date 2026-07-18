@@ -1,8 +1,8 @@
-import { createFileRoute, Outlet } from "@tanstack/react-router";
+import { createLazyFileRoute, Outlet } from "@tanstack/react-router";
 
 import { Navbar } from "#/shared/components/index.tsx";
 
-export const Route = createFileRoute("/_protected/admin")({
+export const Route = createLazyFileRoute("/_protected/admin")({
   component: RouteComponent,
 });
 

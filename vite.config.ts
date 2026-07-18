@@ -15,6 +15,9 @@ const config = defineConfig({
 			router: {
 				generatedRouteTree: "./gen/index.ts",
 			},
+			spa: {
+				enabled: true,
+			},
 		}),
 		viteReact(),
 	],

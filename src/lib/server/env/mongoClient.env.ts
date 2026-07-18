@@ -12,6 +12,8 @@ const db = clientMongo.db(databaseName);
 
 const collection = {
 	user: db.collection("user"),
+	pppId: db.collection("pppId"),
+	accId: db.collection("account"),
 };
 
 export { clientMongo, databaseName, db, collection, hostnameUri };
