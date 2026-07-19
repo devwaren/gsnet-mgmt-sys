@@ -9,22 +9,39 @@ const publicMiddleware = createMiddleware().server(
 			headers: request.headers,
 		});
 
+		console.log("session:", session);
+		console.log("cookie:", request.headers.get("cookie"));
+		console.log("url:", request.url);
+
 		if (!session) {
 			return next();
 		}
 
 		const pathname = new URL(request.url).pathname;
 
-		let destination = "/clients";
-
 		if (!session.user.emailVerified) {
-			destination = `/verify-email/${session.session.token}`;
-		} else if (session.user.role === "admin") {
-			destination = "/admin";
+			if (!pathname.startsWith("/verify-email/")) {
+				throw redirect({
+					to: "/verify-email/$hash",
+					params: {
+						hash: session.session.token,
+					},
+				});
+			}
+
+			return next();
 		}
 
-		if (pathname !== destination) {
-			throw redirect({ to: destination });
+		if (session.user.role === "admin") {
+			if (pathname !== "/admin") {
+				throw redirect({ to: "/admin" });
+			}
+
+			return next();
+		}
+
+		if (pathname !== "/clients") {
+			throw redirect({ to: "/clients" });
 		}
 
 		return next();

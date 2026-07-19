@@ -1,8 +1,8 @@
-import { createLazyFileRoute, Outlet } from "@tanstack/react-router";
+import { createFileRoute, Outlet } from "@tanstack/react-router";
 
 import { authMiddleware } from "../lib/server/middlewares";
 
-export const Route = createLazyFileRoute("/_protected")({
+export const Route = createFileRoute("/_protected")({
   component: RouteComponent,
   server: {
     middleware: [authMiddleware],

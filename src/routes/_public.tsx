@@ -1,8 +1,8 @@
-import { createLazyFileRoute, Outlet } from "@tanstack/react-router";
+import { createFileRoute, Outlet } from "@tanstack/react-router";
 
 import { publicMiddleware } from "../lib/server/middlewares";
 
-export const Route = createLazyFileRoute("/_public")({
+export const Route = createFileRoute("/_public")({
   component: RouteComponent,
   server: {
     middleware: [publicMiddleware],
