@@ -1,3 +1,4 @@
+export { AnimatedContainer, AnimatedText } from "./Animations";
 export { AuthTitle } from "./AuthTitle";
 export { Button } from "./Button";
 export { AuthIcon } from "./Icon";
