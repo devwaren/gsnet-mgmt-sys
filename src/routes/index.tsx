@@ -1,16 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { LoginForm } from "../features/auth/login";
-import { AuthLayout } from "../shared/layouts";
+import { authMiddleware, publicMiddleware } from "../lib/server/middlewares";
 
 export const Route = createFileRoute("/")({
-  component: Home,
+  server: {
+    middleware: [authMiddleware, publicMiddleware],
+  },
 });
-
-function Home() {
-  return (
-    <AuthLayout>
-      <LoginForm />
-    </AuthLayout>
-  );
-}

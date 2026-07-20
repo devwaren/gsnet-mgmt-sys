@@ -9,10 +9,6 @@ const publicMiddleware = createMiddleware().server(
 			headers: request.headers,
 		});
 
-		console.log("session:", session);
-		console.log("cookie:", request.headers.get("cookie"));
-		console.log("url:", request.url);
-
 		if (!session) {
 			return next();
 		}
