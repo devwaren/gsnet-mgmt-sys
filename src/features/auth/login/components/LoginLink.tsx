@@ -24,7 +24,7 @@ export function LoginMenu(props: Props) {
             variant="secondary"
             size="sm"
             className="w-full">
-            {!props.isPending ? "Login" : "Loggedin..."}
+            {!props.isPending ? "Login" : "Logged in..."}
           </Button>
         </motion.div>
 
