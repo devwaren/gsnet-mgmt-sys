@@ -8,6 +8,7 @@ type FieldTypes =
 	| "password"
 	| "file"
 	| "select"
+	| "date"
 	| "text";
 
 export type Fields = {
